@@ -16,7 +16,6 @@ import { ErrorBoundary } from "react-error-boundary";
 function Fallback({ error }) {
   const regex = /\((.*?):\d+:\d+\)/;
   const match = error.stack.match(regex);
-
   if (match) {
     const filePath = match[1];
     console.log("File path:", filePath); // Output: http://localhost:5173/src/App.jsx?t=1732289155098

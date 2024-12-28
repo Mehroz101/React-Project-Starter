@@ -1,6 +1,5 @@
 import React from "react";
 import { Controller } from "react-hook-form";
-import "../../styles/CustomTextInput.css"; // Import the CSS file for styling
 import { InputText } from "primereact/inputtext";
 const CustomTextInput = ({
   control,
@@ -11,14 +10,15 @@ const CustomTextInput = ({
   label = "",
   isEnable = true,
   type = "text",
-  placeHolder = "",
+  placeholder = "",
   errorMessage = "This field is required!",
   showErrorMessage = true,
   autoFocus = false,
+  onChange = () => {},
   ...props
 }) => {
   return (
-    <div className="custom-text-input-container">
+    <div className="custom-input-container">
       <Controller
         name={name}
         control={control}
@@ -28,20 +28,28 @@ const CustomTextInput = ({
           <>
             <label htmlFor={field.name} className={`custom-label `}>
               {label}
+              {required && <span className="text-red-700 fw-bold ">*</span>}
             </label>
             <InputText
               {...field}
+              onChange={(e) => {
+                field.onChange(e.target.value);
+                if (onChange) {
+                  onChange(e);
+                }
+              }}
               id={field.name}
               type={type}
-              placeholder={placeHolder}
+              placeholder={placeholder}
               autoFocus={autoFocus}
               disabled={!isEnable}
-              placeHolder={placeHolder}
               className={`custom-input ${error ? "input-error" : ""}`}
             />
 
             {showErrorMessage && error && (
-              <span className="error-message">{errorMessage}</span>
+              <span className="error-message text-red-500 text-sm">
+                {errorMessage}
+              </span>
             )}
           </>
         )}
@@ -51,3 +59,4 @@ const CustomTextInput = ({
 };
 
 export default CustomTextInput;
+

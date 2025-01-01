@@ -27,8 +27,6 @@ function Fallback({ error }) {
   } else {
     console.log("No file path found in the error message.");
   }
-  console.log(error.file);
-
   return (
     <div
       role="alert"

@@ -57,7 +57,6 @@ function App() {
     </Router>
   );
 }
-
 function AppRoutes() {
   return (
     <Routes>

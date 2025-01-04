@@ -26,7 +26,7 @@ const CustomSidebar = ({ visible, onHide }) => {
         <ul className="sidebar-links">
           <li>
             <Link
-              to={ROUTES.HOME}
+              to={"/"}
               className="sidebar-link"
               onClick={handleLinkClick}
             >

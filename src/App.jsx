@@ -70,4 +70,5 @@ function AppRoutes() {
     </Routes>
   );
 }
+
 export default App;

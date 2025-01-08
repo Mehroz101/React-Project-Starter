@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Navbar({ onShow }) {
   const [checked, setChecked] = useState(true);
-
   return (
     <>
       <Menubar

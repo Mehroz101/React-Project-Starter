@@ -20,4 +20,5 @@ export default function Navbar({ onShow }) {
       />
     </>
   );
+  
 }

@@ -2,7 +2,6 @@ import React from "react";
 import "../styles/Auth.css";
 import CustomTextInput from "../components/FormComponents/CustomTextInput";
 import { useForm } from "react-hook-form";
-
 const Login = () => {
   const method = useForm();
   const onsubmit = (data) => console.log(data);
